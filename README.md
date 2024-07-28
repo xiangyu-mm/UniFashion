@@ -40,10 +40,16 @@ We have uploaded the processed Fashion-IQ-Cap by LLaVA v1.6 on dataset directory
 # Vaildation
 
 1. FashionGen dataset for cross-modal retrieval tasks:
-   run this command:
+   During the training process, we vaild evey epoch and save the result in a csv file. Or you can just vaild the saved checkpoint by run this command:
    ```Shell
-    cd src/UNIStableVITON
-    bash train.sh
+    bash vail.sh
+   ```
+   
+   ```
+   CUDA_VISIBLE_DEVICES=0 python src/blip_validate.py \
+   --dataset 'fashiongen' \
+   --blip-model-name 'blip2_cir_cls' \
+   --model-path 
    ```
 3. Image captioning task performance:
    run this command:
@@ -54,8 +60,13 @@ We have uploaded the processed Fashion-IQ-Cap by LLaVA v1.6 on dataset directory
 4. on the Fashion-IQ dataset for composed image retrieval task:
    run this command:
    ```Shell
-    cd src
-    python metrics.py
+    bash vail.sh
+   ```
+   ```
+   CUDA_VISIBLE_DEVICES=0 python src/blip_validate.py \
+   --dataset 'fashioniq' \
+   --blip-model-name 'blip2_cir_rerank' \
+   --model-path 
    ```
 5. VITON-HD and MGD datasets for try-on task:
    run this command:
