@@ -38,7 +38,7 @@ We have uploaded the processed Fashion-IQ-Cap by LLaVA v1.6 on dataset directory
    ```
 
 # Vaildation
-You can download the checkpoint from [huggingface](https://huggingface.co/UniFashion/UniFashion)
+You can download all the checkpoints from [huggingface](https://huggingface.co/UniFashion/UniFashion)
 
 1. FashionGen dataset for cross-modal retrieval tasks:
    During the training process, we vaild evey epoch and save the result in a csv file. Or you can just vaild the saved checkpoint by run this command:
