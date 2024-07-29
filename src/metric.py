@@ -50,8 +50,6 @@ class COCOEvalCap:
             (Bleu(4), ["Bleu_1", "Bleu_2", "Bleu_3", "Bleu_4"]),
             (Meteor(), "METEOR"),
             (Rouge(), "ROUGE_L"),
-            (Cider(), "CIDEr"),
-            # (Spice(), "SPICE"),
         ]
 
         # =================================================
@@ -118,8 +116,8 @@ if __name__ == "__main__":
         d = {"image_id": img["image"]}
         e = {"image_id": img["image"]}
         img_ids.append(img["image"])
-        d["caption"] = img["caption"][:200]
-        e["caption"] = gt["description"][:200]
+        d["caption"] = img["caption"][:100]
+        e["caption"] = gt["description"][:100]
         print(d["caption"])
         print(e["caption"])
         references.append(d)
