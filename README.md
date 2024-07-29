@@ -19,7 +19,7 @@ We have uploaded the processed Fashion-IQ-Cap by LLaVA v1.6 on dataset directory
 
 1. Phase 1 - Cross-modal Pre-training
 
-   b. run this command:
+   run this command:
 
    ```Shell
     bash pretrain.sh
@@ -49,15 +49,21 @@ We have uploaded the processed Fashion-IQ-Cap by LLaVA v1.6 on dataset directory
    CUDA_VISIBLE_DEVICES=0 python src/blip_validate.py \
    --dataset 'fashiongen' \
    --blip-model-name 'blip2_cir_cls' \
-   --model-path 
+   --model-path ...
    ```
 3. Image captioning task performance:
-   run this command:
+
+   run this command to generate captions for images in FashionGen:
+   ```Shell
+    cd src/llava/LLaVA
+    python cot.py
+   ```
+   run this command to test BLEU, METEOR, ROUGE-L:
    ```Shell
     cd src
     python metrics.py
    ```
-4. on the Fashion-IQ dataset for composed image retrieval task:
+5. on the Fashion-IQ dataset for composed image retrieval task:
    run this command:
    ```Shell
     bash vail.sh
@@ -66,9 +72,9 @@ We have uploaded the processed Fashion-IQ-Cap by LLaVA v1.6 on dataset directory
    CUDA_VISIBLE_DEVICES=0 python src/blip_validate.py \
    --dataset 'fashioniq' \
    --blip-model-name 'blip2_cir_rerank' \
-   --model-path 
+   --model-path ...
    ```
-5. VITON-HD and MGD datasets for try-on task:
+6. VITON-HD and MGD datasets for try-on task:
    run this command:
    ```Shell
     cd src/UNIStableVITON
